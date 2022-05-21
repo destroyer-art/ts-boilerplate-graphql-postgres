@@ -8,7 +8,9 @@ Built with React, Typescript, Node, Express, GraphQL, PostgreSQL, Redis, and Web
 
 Uses custom hooks and [code splitting optimization](https://reactjs.org/docs/code-splitting.html) via route-based component lazy loading with the Suspense component.
 
-Unexpired tokens on sign-out are stored in a redis list and checked against on all authentication attempts .
+Unexpired tokens on sign-out are stored in a redis list and checked against on all authentication attempts.
+
+Deployed on Heroku, [preview](https://node-postgres-graphql.herokuapp.com/) app.
 
 ## Installation
 
@@ -45,10 +47,6 @@ Then run `npm run dev` to start development and your browser should open to `htt
 ## Build
 
 To build the production bundle, run `npm run build`
-
-## Preview
-
-Deployed on Heroku, [preview](https://node-postgres-graphql.herokuapp.com/) app.
 
 ## License
 
