@@ -1,6 +1,14 @@
-# Full Stack Boilerplate with JWT Authentication"
+# Full Stack Boilerplate with JWT Authentication
 
-#### React, Typescript, Node, Express, GraphQL, PostgreSQL, Redis, Webpack
+## About
+
+Full Stack boilerplate with JWT authentication.
+
+Built with React, Typescript, Node, Express, GraphQL, PostgreSQL, Redis, and Webpack.
+
+Uses custom hooks and [code splitting optimization](https://reactjs.org/docs/code-splitting.html) via route-based component lazy loading with the Suspense component.
+
+Unexpired tokens on sign-out are stored in a redis list and checked against on all authentication attempts .
 
 ## Installation
 
