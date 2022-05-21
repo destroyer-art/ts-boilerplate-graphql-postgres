@@ -1,0 +1,33 @@
+@use 'variables';
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100%;
+  display: flex;
+}
+
+.btn {
+  width: 300px;
+  height: 45px;
+  color: variables.$color-dark-gray;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: 0.09rem;
+  background-color: variables.$color-green;
+  border: none;
+  cursor: pointer;
+}
+
+.authenticated {
+  letter-spacing: 0.1rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.1rem;
+  color: variables.$color_off_white;
+  font-weight: 300;
+}

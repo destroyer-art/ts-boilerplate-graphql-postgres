@@ -1,0 +1,50 @@
+@use 'variables';
+
+html {
+  color: variables.$color-green;
+  font-size: variables.$font-size;
+  scroll-behavior: smooth;
+  background-color: variables.$color-background;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  background-color: variables.$color-background;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: variables.$color-background;
+}

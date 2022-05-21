@@ -1,0 +1,53 @@
+@use 'variables';
+
+.container {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  height: 60px;
+  width: 100%;
+  z-index: 1;
+  padding: 1rem;
+  box-sizing: border-box;
+  background-color: variables.$color-background;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.inner {
+  display: flex;
+  width: auto;
+}
+
+.sourceCode {
+  color: variables.$color_off_white;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.heading {
+  color: variables.$color_off_white;
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  user-select: text;
+}
+
+.reactIcon {
+  color: variables.$color-green;
+  font-size: 1.2rem;
+}
+
+.githubIcon {
+  color: variables.$color-green;
+  font-size: 1.3rem;
+  margin-right: 0.6rem;
+  cursor: pointer;
+}
