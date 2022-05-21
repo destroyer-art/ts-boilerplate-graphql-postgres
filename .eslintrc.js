@@ -1,25 +1,61 @@
 module.exports = {
+  root: true,
   env: {
     browser: true,
-    es2020: true,
+    commonjs: true,
+    es6: true,
+    jest: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'plugin:prettier/recommended'],
+  plugins: ['react'],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: 11,
+    ecmaVersion: 2020,
     sourceType: 'module',
   },
-  plugins: ['react'],
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
+  ],
+  settings: {
+    react: {
+      version: 'detect',
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   rules: {
-    'no-multiple-empty-lines': [
+    'import/extensions': [
       'error',
+      'ignorePackages',
       {
-        max: 1,
-        maxEOF: 1,
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
       },
     ],
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
   },
+  overrides: [
+    {
+      files: ['*.{ts,tsx}'],
+      parser: '@typescript-eslint/parser',
+      parserOptions: {
+        ecmaVersion: 2020,
+        project: './tsconfig.json',
+      },
+      plugins: ['@typescript-eslint', 'import'],
+      extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+      rules: {
+        'no-console': 0,
+        '@typescript-eslint/no-explicit-any': 0,
+      },
+    },
+  ],
 };

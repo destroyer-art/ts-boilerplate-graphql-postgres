@@ -3,7 +3,7 @@ import db from '../database';
 import { setCookie, signToken, getStatus, generateToken } from './utils/tokenUtils';
 import { client } from '../database/redis';
 
-const TOKEN_NAME: string = 'x-access-token';
+const TOKEN_NAME = 'x-access-token';
 
 const resolvers = {
   Query: {
@@ -20,7 +20,7 @@ const resolvers = {
       _args: any,
       ctx: any
     ): Promise<{ status: number }> => {
-      let isValid: boolean = false;
+      let isValid = false;
       const accessToken: string = generateToken(ctx.req.cookies[TOKEN_NAME]);
       const status: number = getStatus(accessToken);
       if (status === 200) {

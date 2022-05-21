@@ -14,7 +14,7 @@ export const SignIn = ({ email }: Props) => {
 
   const [signInUser] = useMutation(SIGN_IN_USER, {
     onCompleted: res => {
-      const { message } = res?.signInUser;
+      const { message } = res.signInUser || '';
       if (message === 'success') {
         window.location.href = '/dashboard';
       } else if (message === 'invalid password') {

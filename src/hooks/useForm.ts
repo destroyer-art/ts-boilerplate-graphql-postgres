@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-const EMAIL_INPUT: string = 'email';
-const PASSWORD_INPUT: string = 'password';
-const INVALID_EMAIL_MSG: string = 'Enter a valid email';
-const INVALID_PASSWORD_MSG: string = 'Enter a valid password';
+const EMAIL_INPUT = 'email';
+const PASSWORD_INPUT = 'password';
+const INVALID_EMAIL_MSG = 'Enter a valid email';
+const INVALID_PASSWORD_MSG = 'Enter a valid password';
 
 interface FormData {
   email?: string;
@@ -14,12 +14,12 @@ export const useForm = (callback: any, initialState = {}) => {
   const [formData, setFormData] = React.useState<FormData>(initialState);
 
   const isValidEmail = (email: string | undefined): boolean => {
-    const regex: RegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     return regex.test(email);
   };
 
   const isValidPassword = (password: string | undefined): boolean => {
-    const regex: RegExp =
+    const regex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
     return regex.test(password);
   };

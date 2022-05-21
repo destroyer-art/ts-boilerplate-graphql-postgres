@@ -19,7 +19,7 @@ export const signToken = (user: any) => {
 };
 
 export const setCookie = (token: string, ctx: any): void => {
-  const headerKey: string = `x-access-token`;
+  const headerKey = `x-access-token`;
   ctx.res.cookie(headerKey, JSON.stringify(token), cookieOpts);
 };
 
