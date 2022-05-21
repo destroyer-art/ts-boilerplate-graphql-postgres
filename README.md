@@ -10,8 +10,6 @@ Uses custom hooks and [code splitting optimization](https://reactjs.org/docs/cod
 
 Unexpired tokens on sign-out are stored in a redis list and checked against on all authentication attempts.
 
-Deployed on Heroku, [preview](https://node-postgres-graphql.herokuapp.com/) app.
-
 ## Installation
 
 Clone the repo:
@@ -47,6 +45,12 @@ Then run `npm run dev` to start development and your browser should open to `htt
 ## Build
 
 To build the production bundle, run `npm run build`
+
+## Preview
+
+Deployed to Heroku, [preview](https://node-postgres-graphql.herokuapp.com/) app.
+
+![preview](https://portfolio-img-uploads.s3.us-west-1.amazonaws.com/ts-boilerplate-graphql-pg-preview.png)
 
 ## License
 
