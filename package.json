@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:scottjason/graphql-authentication.git"
+    "url": "git@github.com:scottjason/ts-boilerplate-graphql-pg.git"
   },
   "keywords": [
     "jwt",

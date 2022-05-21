@@ -1,7 +1,9 @@
 import * as React from 'react';
 
-const EMAIL_INPUT = 'email';
-const PASSWORD_INPUT = 'password';
+const EMAIL_INPUT: string = 'email';
+const PASSWORD_INPUT: string = 'password';
+const INVALID_EMAIL_MSG: string = 'Enter a valid email';
+const INVALID_PASSWORD_MSG: string = 'Enter a valid password';
 
 interface FormData {
   email?: string;
@@ -22,11 +24,11 @@ export const useForm = (callback: any, initialState = {}) => {
     return regex.test(password);
   };
 
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
 
-  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event?.preventDefault();
     const { email, password } = formData;
     const target = event.target as HTMLFormElement;
@@ -35,14 +37,14 @@ export const useForm = (callback: any, initialState = {}) => {
       if (isValidEmail(email)) {
         callback(null);
       } else {
-        const msg = 'Enter a valid email';
+        const msg: string = INVALID_EMAIL_MSG;
         callback(msg);
       }
     } else if (name === PASSWORD_INPUT) {
       if (isValidPassword(password)) {
         callback(null);
       } else {
-        const msg = 'Enter a valid password';
+        const msg: string = INVALID_PASSWORD_MSG;
         callback(msg);
       }
     }
