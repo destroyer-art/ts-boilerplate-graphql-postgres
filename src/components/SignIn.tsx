@@ -4,14 +4,14 @@ import styles from '../styles/form.scss';
 import { useForm } from '../hooks/useForm';
 import { SIGN_IN_USER } from '../graphql/mutations';
 
+const FALLBACK_ERROR = 'An error occurred, try again.';
+const INVALID_PASSWORD = 'Invalid credentials, try again.';
+const PASSWORD_REQS_ =
+  'Password must contain a minimum of eight characters, at least one uppercase letter, one lowercase letter and one number.';
+
 interface Props {
   email: string;
 }
-
-const PASSWORD_REQS_ =
-  'Password must contain a minimum of 8 characters, a lowercase letter, an uppercase letter and a number';
-const FALLBACK_ERROR = 'An error occurred, try again.';
-const INVALID_PASSWORD = 'Invalid credentials, try again.';
 
 export const SignIn = ({ email }: Props) => {
   const [errorMsg, setError] = React.useState<string>('');
