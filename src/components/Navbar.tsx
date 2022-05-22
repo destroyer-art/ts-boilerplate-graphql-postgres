@@ -2,7 +2,7 @@ import * as React from 'react';
 import { FaReact, FaGithub } from 'react-icons/fa';
 import styles from '../styles/navbar.scss';
 
-const REPO_URL = 'https://github.com/scottjason/ts-boilerplate-graphql-pg';
+const REPO_URL = 'https://github.com/scottjason/ts-boilerplate-graphql-postgres';
 
 export const Navbar = (): JSX.Element => {
   return (
