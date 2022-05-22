@@ -4,6 +4,7 @@ import { setCookie, signToken, getStatus, generateToken } from './utils/tokenUti
 import { client } from '../database/redis';
 
 const TOKEN_NAME = 'x-access-token';
+const TOKENS_REDIS_KEY = 'invalid-tokens';
 
 const resolvers = {
   Query: {
@@ -24,10 +25,10 @@ const resolvers = {
       const accessToken: string = generateToken(ctx.req.cookies[TOKEN_NAME]);
       const status: number = getStatus(accessToken);
       if (status === 200) {
-        const invalidTokens = await client.lrange('invalid-tokens', 0, -1);
+        const invalidTokens = await client.lrange(TOKENS_REDIS_KEY, 0, -1);
         isValid = !invalidTokens.includes(accessToken);
       } else if (accessToken) {
-        client.lpush('invalid-tokens', accessToken);
+        client.lpush(TOKENS_REDIS_KEY, accessToken);
         ctx.res.clearCookie(TOKEN_NAME);
       }
       return {
@@ -87,10 +88,10 @@ const resolvers = {
         };
       }
     },
-    signOutUser: async (_: any, args: any, ctx: any): Promise<{ status: number }> => {
+    signOutUser: async (_: any, _args: any, ctx: any): Promise<{ status: number }> => {
       const accessToken = generateToken(ctx.req.cookies[TOKEN_NAME]);
       if (accessToken) {
-        client.lpush('invalid-tokens', accessToken);
+        client.lpush(TOKENS_REDIS_KEY, accessToken);
       }
       ctx.res.clearCookie(TOKEN_NAME);
       return {

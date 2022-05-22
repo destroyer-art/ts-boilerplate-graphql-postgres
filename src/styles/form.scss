@@ -51,7 +51,18 @@
   font-size: 1rem;
   width: 100%;
   height: auto;
-  color: #ed6a5a;
+  color: variables.$color-red;
   margin-bottom: 0.1rem;
+  max-width: fit-content;
+}
+
+.passwordReqs {
+  position: absolute;
+  letter-spacing: 0.1rem;
+  font-size: 0.8rem;
+  width: 100%;
+  height: auto;
+  color: variables.$color-red;
+  margin-top: 0.25rem;
   max-width: fit-content;
 }

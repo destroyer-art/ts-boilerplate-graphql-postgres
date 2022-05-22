@@ -4,6 +4,10 @@ import styles from '../styles/form.scss';
 import { useForm } from '../hooks/useForm';
 import { CREATE_USER } from '../graphql/mutations';
 
+const PASSWORD_REQS_ =
+  'Password must contain a minimum of 8 characters, a lowercase letter, an uppercase letter and a number';
+const FALLBACK_ERROR = 'An error occurred, try again.';
+
 interface Props {
   email: string;
 }
@@ -26,7 +30,7 @@ export const CreateAccount = ({ email }: Props): JSX.Element => {
       window.location.href = '/dashboard';
     },
     onError: (err): void => {
-      setError(err?.message || 'Error, please try agan.');
+      setError(err?.message || FALLBACK_ERROR);
     },
   });
 
@@ -64,6 +68,11 @@ export const CreateAccount = ({ email }: Props): JSX.Element => {
             CREATE ACCOUNT
           </button>
         </form>
+        {errorMsg && (
+          <div className={styles.passwordReqs}>
+            <p>{PASSWORD_REQS_}</p>
+          </div>
+        )}
       </div>
     </div>
   );

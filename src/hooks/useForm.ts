@@ -19,8 +19,7 @@ export const useForm = (callback: any, initialState = {}) => {
   };
 
   const isValidPassword = (password: string | undefined): boolean => {
-    const regex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/;
+    const regex = /^((?=.*\d)(?=.*[A-Z])\w.{8,24}\w).*$/;
     return regex.test(password);
   };
 

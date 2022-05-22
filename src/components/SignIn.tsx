@@ -8,30 +8,36 @@ interface Props {
   email: string;
 }
 
+const PASSWORD_REQS_ =
+  'Password must contain a minimum of 8 characters, a lowercase letter, an uppercase letter and a number';
+const FALLBACK_ERROR = 'An error occurred, try again.';
+const INVALID_PASSWORD = 'Invalid credentials, try again.';
+
 export const SignIn = ({ email }: Props) => {
   const [errorMsg, setError] = React.useState<string>('');
   const { onChange, onSubmit, formData } = useForm(onFormSubmit);
 
   const [signInUser] = useMutation(SIGN_IN_USER, {
-    onCompleted: res => {
+    onCompleted: (res): void => {
       const { message } = res.signInUser || '';
       if (message === 'success') {
         window.location.href = '/dashboard';
       } else if (message === 'invalid password') {
-        const msg = 'Invalid password, try again.';
+        const msg: string = INVALID_PASSWORD;
         setError(msg);
       } else {
-        const msg = 'An error occurred, try again.';
+        const msg: string = FALLBACK_ERROR;
         setError(msg);
       }
     },
-    onError: () => {
-      const msg = 'An error occurred, try again.';
+    onError: (): void => {
+      const msg: string = FALLBACK_ERROR;
       setError(msg);
     },
   });
 
-  function onFormSubmit(error: string | null) {
+  function onFormSubmit(error: string | null): void {
+    console.log(formData);
     if (error) {
       setError(error);
     } else {
@@ -65,6 +71,11 @@ export const SignIn = ({ email }: Props) => {
             SIGN IN
           </button>
         </form>
+        {errorMsg && (
+          <div className={styles.passwordReqs}>
+            <p>{PASSWORD_REQS_}</p>
+          </div>
+        )}
       </div>
     </div>
   );
