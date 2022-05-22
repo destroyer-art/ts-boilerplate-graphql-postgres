@@ -25,11 +25,11 @@ Then cd into the root directory and run `npm install`
 Add a `.env` file in the root directory of the repo with the following, and update the values:
 
 ```bash
-JWT_SECRET: enter your JWT secret, a long random string
-DEV_ORIGIN: http://localhost:8080
-PROD_ORIGIN: Enter your production origin
-REDIS_URL: Enter your redis url ie redis://...
-REDIS_TLS_URL: Enter your redis tls url ie rediss://...
+JWT_SECRET=enter your JWT secret, a long random string
+DEV_ORIGIN=http://localhost:8080
+PROD_ORIGIN=Enter your production origin
+REDIS_URL=Enter your redis url ie redis://...
+REDIS_TLS_URL=Enter your redis tls url ie rediss://...
 DEV_DB_HOST=localhost
 DEV_DB_USER=yourname
 DEV_DB_PASSWORD=yourpassword
