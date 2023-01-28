@@ -6,7 +6,7 @@ import App from './App';
 
 const generateUri = (): string => {
   return process.env.NODE_ENV === 'production'
-    ? 'https://ts-auth-graphql-postgres.herokuapp.com/graphql'
+    ? 'https://ts-boilerplate-graphql-postgres-production.up.railway.app/graphql'
     : 'http://localhost:3000/graphql';
 };
 

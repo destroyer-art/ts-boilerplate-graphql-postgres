@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
 
-const { REDIS_URL, REDIS_TLS_URL } = process.env;
-const url: string = REDIS_TLS_URL || REDIS_URL;
+const { REDIS_URL } = process.env;
+const url: string = REDIS_URL;
 
 interface Opts {
   tls: {
