@@ -6,7 +6,7 @@ import App from './App';
 
 const generateUri = (): string => {
   return process.env.NODE_ENV === 'production'
-    ? 'https://ts-boilerplate-graphql-postgres-production.up.railway.app/graphql'
+    ? 'https://ts-boilerplate-graphql-postgres.onrender.com/graphql'
     : 'http://localhost:3000/graphql';
 };
 

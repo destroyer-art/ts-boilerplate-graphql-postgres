@@ -47,7 +47,7 @@ To build the production bundle, run `npm run build`
 
 ## Preview
 
-Deployed to [Railway](https://railway.app/), [preview](https://ts-boilerplate-graphql-postgres-production.up.railway.app) app.
+Deployed to [Render](https://render.com/), [preview]('https://ts-boilerplate-graphql-postgres.onrender.com) app.
 
 ## License
 
