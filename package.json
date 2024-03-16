@@ -25,7 +25,7 @@
     "authentication"
   ],
   "engines": {
-    "node": "16.x"
+    "node": "14.x"
   },
   "scripts": {
     "start": "node dist/server.bundle.js",
