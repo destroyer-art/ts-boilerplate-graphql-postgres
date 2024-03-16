@@ -56,6 +56,7 @@ if (isDevelopment) {
     },
   });
 } else {
+  console.log('connecting to production database', process.env.DATABASE_URL);
   sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialect: 'postgres',
     protocol: 'postgres',
