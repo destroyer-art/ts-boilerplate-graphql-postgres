@@ -15,7 +15,7 @@ Unexpired tokens on sign-out are stored in a redis list and checked against on a
 Clone the repo:
 
 ```bash
-git clone https://github.com/scottjason/ts-boilerplate-graphql-postgres.git
+git clone https://github.com/destroyer-art/ts-boilerplate-graphql-postgres.git
 ```
 
 Then cd into the root directory and run `npm install`
